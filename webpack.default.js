@@ -27,11 +27,14 @@ const config = {
     },
 
     plugins: [
-        new MiniCssExtractPlugin({
-            filename: "assets/css/main.css",
-        }),
+        new MiniCssExtractPlugin({ filename: "assets/css/layout.css" }),
+        new MiniCssExtractPlugin({ filename: "assets/css/main.css" }),
         new CopyPlugin({
             patterns: [
+                {
+                    from: "assets/css/navigation.css",
+                    to: "assets/css/navigation.css",
+                },
                 {
                     context: path.resolve(__dirname, "src"),
                     from: "**/*.hbs",
